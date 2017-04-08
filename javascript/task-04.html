@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>task-04</title>
+</head>
+<style type="text/css">
+    #box {
+        width: 70%;
+        height: 900px;
+        margin: 0 auto;
+        background-color: #ebecec;
+        text-align: center;
+    }
+    #textarea {
+        width: 50%;
+        height: 100px;
+        background-color: #f5f5f5;       
+    }   
+
+    p {
+      padding: 30px;
+      margin: 0;
+    } 
+    #add {
+        text-align: center;
+    }
+
+   
+    .highlight {
+      background-color: red;
+      color: blue;
+    }
+</style>
+<body>
+    <div id="box">
+        <p>请输入内容！</p>
+        <textarea id="textarea"></textarea>
+        <button id="btn1">提交</button>
+        <div>
+          <input id="input" type="text" name="">
+          <button id="btn">查询</button>
+        </div>
+        
+        <div id="content"></div>
+    </div>
+<!--js-->
+
+   <script type="text/javascript">
+   /*增加一个查询文本输入框，和一个查询按钮，当点击查询时，将查询词在各个元素内容中做模糊匹配，将匹配到的内容进行特殊标识，如文字颜色等。举例，内容中有abcd，查询词为ab或bc，则该内容需要标识*/
+        var textarea = document.getElementById('textarea');
+        var input = document.getElementById('input');
+        var btn = document.getElementById('btn');
+        var btn1 = document.getElementById('btn1');
+        var content = document.getElementById('content');
+        
+        function getcon() {
+          return textarea.value;
+        }
+        function getkey() {
+          return input.value;
+        }
+        function matchKey() {
+          //var contentTxt = content.innerText;
+          var select = getcon().match(getkey());
+          return select;
+        }
+
+        btn.onclick = function() {
+          //var contentTxt = content.innerText;
+          var selected = matchKey()；
+          if(selected === null) {
+            alert('不存在');
+          } else {
+            alert(selected)；
+          }
+          //var changed = contentTxt.replace(eval('/>('+selected+')</gi'),'><em class='highlight'></em><');
+          //alert(changed);
+          /*var change = document.createElement('span');
+          var changeTxt = selected;
+          change.appendChild(changeTxt);
+          change.style.color = 'white';
+          var changed = chagne.innerText;*/
+        };
+
+        /*btn1.onclick = function() {
+          var div =document.createElement('div');
+          var divTxt = document.createTextNode(getcon());
+          div.appendChild(divTxt);
+          content.appendChild(div);
+        };*/
+     
+   </script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+/*----------------------------------------通用----------------------------------*/
+
+html {
+	width: 95%;
+	margin: 0 auto;
+	font-size: 16px;
+	background-color: #1d1d1d;
+}
+
+body {
+	margin: 0;
+	background-color: #efecec;
+}
+
+* {
+	box-sizing: border-box;
+}
+a {
+	text-decoration: none;
+	color: #000000;
+}
+
+
+p {
+	text-indent:2em;
+	
+}
+
+/*--------------------------------------header -----------------------------------------*/
+header {
+	height: 60px;
+	margin: 0;
+	background-color: #48494a;
+}
+
+header > a > img {
+	margin-left: 30px;	
+	height: 60px;
+}
+
+header > ul {
+	margin: 0;
+	float: right;
+	padding-right: 20px;
+}
+
+header > ul > li {
+	display: inline-block;
+}
+
+header > ul > li > a {
+	font-size: 0.6em;
+	line-height: 60px;
+	margin-right: 10px;
+	color: #ffffff;
+}
+
+/*--------------------------content---------------------------------*/
+.wrapper .section {
+	width: 60%;
+	margin-left: 25px;
+	margin-top: 25px;
+	padding-left: 20px;
+	padding-bottom: 20px;
+	border:1px solid #c7bfbf;
+	box-shadow: 1px 1px 1px #524f4f;
+    background-color: #ffffff;
+}
+
+.wrapper .section h3 {
+	color: gray;
+	margin-bottom: 15px;
+}
+
+.wrapper .section .write {
+	font-size: 0.85em;
+	color: gray;
+}
+
+.wrapper .section a {
+	color: blue;
+	text-decoration: underline;
+}
+
+.section .images {
+	width: 40%;
+}
+
+.section .image {
+	display: inline-block;
+	width: 15%;
+	margin: 10px ;
+	text-align: center;
+	border:1px solid gray;
+}
+
+.section .image p {
+	text-indent: 0;
+}
+
+.section .image img {
+	width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.section table {
+	width: 100%;
+	border-collapse:collapse;
+	text-align: left;
+	vertical-align: middle;
+}
+
+
+.section table th {
+	border:1px solid #b58989;
+	background-color: gray;
+}
+
+.section table td {
+	border:1px solid #b58989;
+}
+
+.section table .last {
+	background-color: #dcdcdc;
+}
+
+/*----------------------------------aside------------------------------*/
+.aside {
+    position: absolute;
+    left: 64.5%;
+    top: 60px;
+    width: 400px;
+	margin-top: 25px;
+	padding-left: 20px;
+	padding-bottom: 20px;
+	border:1px solid #c7bfbf;
+	box-shadow: 1px 1px 1px #524f4f;
+    background-color: #ffffff;
+}
+
+.aside h4 {
+	border-left: 3px solid gray;
+	padding: 10px;
+}
+
+.aside p {
+
+	text-indent: 0;	
+	font-size: 0.9em;
+}
+
+
+.aside .submit {
+	text-align: center;
+	margin: 0;
+}
+.aside .con {
+	width: 60%;
+	height: 40px;
+	margin: 20px auto;
+	background: linear-gradient(#1d80e6,#064fbd);
+	border: 1px solid #0e47e6;
+	border-radius: 5px;
+	color: #ffffff;
+	font-size: 1.2em;
+}
+
+.aside .ple {
+	display: inline-block;
+	margin-left: 20px;
+	text-align: right;
+	width: 140px;
+}
+.aside .ples{
+	position: relative;
+	top: -75px;
+}
+.aside div {
+	margin-bottom: 10px;
+}
+
+.aside .ifo {
+	margin-left: 160px;
+	color: #ccc;
+}
