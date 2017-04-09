@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>task-04</title>
+</head>
+<style type="text/css">
+    #box {
+        width: 70%;
+        margin: 0 auto;
+        
+    }
+    #input {
+        width: 25%;
+        margin-left: 20%;
+        margin-top: 5%;
+    }
+    #one {
+        margin-left: 2%;
+    }
+    #three {
+        margin-left: 4%;
+    }
+    #add {
+        text-align: center;
+
+    }
+    .addd {
+        display: inline-block;
+        width: 20px;
+        margin-top: 30px;
+        background-color: red;
+        color: black;
+        text-align: center;
+        vertical-align: bottom;
+    }
+</style>
+<body>
+    <div id="box">
+        <input type="text" name="tianjia" id="input">
+        <button id ="one">左侧入</button>
+        <button id ="two">右侧入</button>
+        <button id ="three">左侧出</button>
+        <button id ="four">右侧出</button>
+        <button id ="btn">重新排序</button>
+        <div id="add" class="div"></div>
+    </div>
+<!--js-->
+
+   <script type="text/javascript">
+        var leftIn = document.getElementById('one');
+        var rightIn = document.getElementById('two')  ;
+        var leftOut = document.getElementById('three');
+        var rightOut = document.getElementById('four');
+        var input =document.getElementById('input');
+        var add = document.getElementById('add');
+        //var spans =document.getElementsByTagName('span');
+        var divs = add.childNodes;
+        function getadd() {
+            return input.value;
+        }
+        function addfun() {
+            if (getadd()=='') {
+                alert('请输入数字！');
+              } else if (isNaN(getadd())){
+                alert('请输入数字');
+              } else if (getadd() < 10 || getadd() > 100){
+                alert('输入10-100内数值');
+              } else if (divs.length > 9) {
+                alert('超出总数范围');
+              } else {
+              var adddiv = document.createElement('span');  
+              adddiv.setAttribute('class','addd')
+              adddiv.style.height = getadd() + 'px';  
+            }
+            return adddiv;
+
+        }
+        
+      
+        leftIn.onclick=function() { 
+          var left = addfun();
+          add.insertBefore(left,add.firstChild); 
+        };
+
+        rightIn.onclick=function() {
+          var right = addfun();
+          add.appendChild(right); 
+        };
+
+        leftOut.onclick=function() {
+          alert('即将移除'+divs[0].style.height.replace('px',''));
+          add.removeChild(divs[0]);
+           
+        };
+        rightOut.onclick=function() {
+          alert('即将移除'+add.lastChild.style.height.replace('px','')); 
+          add.removeChild(divs[divs.length-1]);
+          
+        };
+
+        
+        
+        var btn = document.getElementById('btn');
+        /*------------------quick--------------*/
+        btn.onclick = function() {
+          var arrr = new Array();
+          var arry = new Array();
+          var spans = document.getElementsByTagName('span');
+           
+          for (var i = 0; i < spans.length; i++) {
+            var arr = spans[i].style.height.replace('px','');
+            arrr[i] = arr;
+            arry = insertSort(arrr); 
+          }
+          for (var i = 0; i < arry.length; i++) {
+            spans[i].style.height = arry[i] + 'px';
+          }
+        };
+        function quickSort(arr) {
+          if (arr.length <= 1) {
+            return arr.slice(0);
+          }
+
+          var left = [];
+          var right = [];
+          var pivotIndex = Math.floor(arr.length / 2);
+          var pivot = arr.splice(pivotIndex,1)[0];
+
+          for(var i = 0; i< arr.length; i++) {
+            if (arr[i] < pivot) {
+              left.push(arr[i]);
+            } else {
+              right.push(arr[i]);
+            }
+          } 
+
+          return quickSort(left).concat([pivot],quickSort(right));
+        }
+
+        function insertSort(arr) {
+          if (arr.length <= 1) {
+            return arr;
+          }
+          for (var i = 0; i < arr.length; i++) {
+            for (var j = i-1; j >= 0; j--) {
+              if (arr[j+1] < arr[j]) {
+                var temp = arr[j+1];
+                arr[j+1] = arr[j];
+                arr[j] = temp;
+              }
+            }
+          }
+          return arr;
+        }
+
+        function bubbleSort(arr) {
+          if (arr.length <= 1) {
+            return arr;
+          }
+          for (var i = 0; i < Things.length; i++) {
+            Things[i]
+          }
+        }
+   </script>
+</body>
+</html>
